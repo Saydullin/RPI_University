@@ -4,17 +4,13 @@ function connectSadySlider(DOM) {
     const sliderItems = DOM.querySelectorAll(".sady_slider_item");
 
     [...sliderItems].forEach(element => {
-        var width = sadySlider.offsetWidth;
-        element.style.width = width + "px";
-        element.setAttribute("style", "width: " + width + "px;");
+        element.setAttribute("style", "width: " + sadySlider.offsetWidth + "px;");
     });
 
     sliderItemsParent.addEventListener("click", function(e) {
         if (e.target.closest(".sady_slider_dott")) {
             var id = e.target.dataset.id;
-            var currSlide = sliderItems[id - 1];
-            var translate = currSlide.offsetLeft - sliderItems[0].offsetLeft;
-
+            var translate = sliderItems[id - 1].offsetLeft - sliderItems[0].offsetLeft;
             sliderItemsParent.setAttribute("style", "transform: translateX(" + (translate * -1) + "px);");
         }
     })

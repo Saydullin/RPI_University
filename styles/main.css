@@ -127,6 +127,15 @@ body {
     color: aliceblue;
 }
 
+.logo_link img {
+    transition: .2s;
+}
+
+.logo_link:hover img {
+    opacity: 1;
+    transition: .2s;
+}
+
 .container_small, .container {
     max-width: 1160px;
     width: 100%;
